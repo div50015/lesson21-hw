@@ -1,6 +1,9 @@
-from allure_commons._allure import step
 from appium.webdriver.common.appiumby import AppiumBy
 from selene import browser, have
+import allure
+from allure_commons._allure import step
+from allure_commons.types import AttachmentType
+
 
 
 def test_search():
@@ -13,3 +16,4 @@ def test_search():
         results = browser.all((AppiumBy.ID, 'org.wikipedia.alpha:id/page_list_item_title'))
         results.should(have.size_greater_than(0))
         results.first.should(have.text('Appium'))
+
